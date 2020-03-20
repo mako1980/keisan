@@ -2,7 +2,7 @@ body {
   background-color: #fff;
   color: #283C46;
   font-family: 'Noto Sans JP','ヒラギノ角ゴシック', 'メイリオ', sans-serif;
-  font-size: 22px;
+  font-size: 26px;
   width:350px;
   margin-right: auto;
   margin-left : auto;
@@ -14,14 +14,13 @@ h1 {
   text-decoration: none;
   font-size: 32px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-h2 {
+.readme {
   color: #283C46;
   text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
+  font-size: 18px;
   margin-top: 20px;
 }
 
@@ -30,10 +29,5 @@ hr {
 }
 
 .btn {
-  margin: 5px;
-}
-
-#time {
-  font-size: 14px;
-  margin: 0px 0px;
+  margin: 3px;
 }

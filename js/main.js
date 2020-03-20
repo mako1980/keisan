@@ -1,5 +1,6 @@
-var an;
-var point;
+var an; // 解答
+var point; // 正解数
+
 // 配列をシャッフル
 function shuffle(array) {
   for (let i = array.length - 1; i >= 0; i--) {
@@ -24,7 +25,7 @@ function next() {
   var rand_b;
   rand_a = Math.floor( Math.random() * 20);
   rand_b = Math.floor( Math.random() * 15);
-  // 負数にならんように
+  // 難易度調整:負数にならんように
   if (op_f == "-") {
     while (rand_a < rand_b) {
       rand_a = Math.floor( Math.random() * 20);
@@ -39,28 +40,32 @@ function next() {
   }
   // 選択肢
   ary = new Array(an, an - 1, an + 1, an + 2);
+  // 難易度調整：負数は選択肢にすら出さんね
+  for (let i in ary) {
+    if (ary[i] < 0) {
+      ary[i] = an + 3;
+    }
+  }
   shuffle(ary);
   // 設定
-  op = document.getElementById("op");
-  a = document.getElementById("a");
-  b = document.getElementById("b");
-  m = document.getElementById("msg");
-  op.textContent = op_f; 
-  a.textContent = rand_a; 
-  b.textContent = rand_b; 
+  $('#op').text(op_f);
+  $('#a').text(rand_a);
+  $('#b').text(rand_b);
   $('#an1').val(ary[0]);
   $('#an2').val(ary[1]);
   $('#an3').val(ary[2]);
   $('#an4').val(ary[3]);
-  m.textContent = ""; 
+  $('#msg').text("");
+  $('#comment').text("");
 }
 
+// ページ更新時、最初に動く
 window.onload = function() {
   point = 0;
-  p = document.getElementById("point");
-  p.textContent = point; 
+  $('#point').text(point);
   this.next();
 }
+
 // 回答クリック後の判定
 function ans(id) {
   var i_ans;
@@ -79,13 +84,38 @@ function ans(id) {
       break;
   }
   if (i_ans == an) {
-    m = document.getElementById("msg");
-    m.textContent = "○"; 
+    $('#msg').text("○");
     point = point + 1;
-    p = document.getElementById("point");
-    p.textContent = point; 
+    $('#point').text(point);
+    // 応援コメント
+    switch (point) {
+      case 1:
+        $('#comment').text("せいかい。おめでとう！");
+        break;
+      case 3:
+        $('#comment').text("すごい。せいかい。");
+        break;
+      case 5:
+        $('#comment').text("(*^^*)");
+        break;
+      case 7:
+        $('#comment').text("すご。");
+        break;
+      case 10:
+        $('#comment').text("すごすぎる。");
+        break;
+      case 12:
+        $('#comment').text("てんさいだ。");
+        break;
+      case 15:
+        $('#comment').text("さんすうのてんさいですか？");
+        break;
+      default:
+        $('#comment').text("");
+        break;
+    }
   } else {
-    m = document.getElementById("msg");
-    m.textContent = "×"; 
+    $('#msg').text("×");
+    $('#comment').text("");
   }
 }
