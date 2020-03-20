@@ -1,0 +1,39 @@
+body {
+  background-color: #fff;
+  color: #283C46;
+  font-family: 'Noto Sans JP','ヒラギノ角ゴシック', 'メイリオ', sans-serif;
+  font-size: 22px;
+  width:350px;
+  margin-right: auto;
+  margin-left : auto;
+  background-image: url("../image/b1.jpg");
+}
+
+h1 {
+  color: #7DF75C;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #283C46;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+hr {
+  border-color: #ccc ;
+}
+
+.btn {
+  margin: 5px;
+}
+
+#time {
+  font-size: 14px;
+  margin: 0px 0px;
+}
