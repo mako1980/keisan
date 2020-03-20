@@ -110,6 +110,9 @@ function ans(id) {
       case 15:
         $('#comment').text("さんすうのてんさいですか？");
         break;
+      case 20:
+        $('#comment').text("てんさいだー！");
+        break;
       default:
         $('#comment').text("");
         break;
