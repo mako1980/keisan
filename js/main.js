@@ -44,6 +44,7 @@ function next() {
   op = document.getElementById("op");
   a = document.getElementById("a");
   b = document.getElementById("b");
+  m = document.getElementById("msg");
   op.textContent = op_f; 
   a.textContent = rand_a; 
   b.textContent = rand_b; 
@@ -51,6 +52,7 @@ function next() {
   $('#an2').val(ary[1]);
   $('#an3').val(ary[2]);
   $('#an4').val(ary[3]);
+  m.textContent = ""; 
 }
 
 window.onload = function() {
