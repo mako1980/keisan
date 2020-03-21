@@ -25,8 +25,8 @@ function next() {
   // 問題を作成
   //
   if (point > 30) {
-    c_a = 30; // 問題の係数
-    c_b = 29; // 問題の係数
+    c_a = 50; // 問題の係数
+    c_b = 49; // 問題の係数
   }
   var rand_a;
   var rand_b;
