@@ -1,5 +1,7 @@
 var an; // 解答
 var point; // 正解数
+var c_a = 20; // 問題の係数
+var c_b = 15; // 問題の係数
 
 // 配列をシャッフル
 function shuffle(array) {
@@ -20,16 +22,21 @@ function next() {
   } else {
     op_f = "-";
   }
-  // 左辺と右辺を作成
+  // 問題を作成
+  //
+  if (point > 30) {
+    c_a = 30; // 問題の係数
+    c_b = 29; // 問題の係数
+  }
   var rand_a;
   var rand_b;
-  rand_a = Math.floor( Math.random() * 20);
-  rand_b = Math.floor( Math.random() * 15);
+  rand_a = Math.floor( Math.random() * c_a);
+  rand_b = Math.floor( Math.random() * c_b);
   // 難易度調整:負数にならんように
   if (op_f == "-") {
     while (rand_a < rand_b) {
-      rand_a = Math.floor( Math.random() * 20);
-      rand_b = Math.floor( Math.random() * 15);
+      rand_a = Math.floor( Math.random() * c_a);
+      rand_b = Math.floor( Math.random() * c_b);
     }
   }
   // 解答
@@ -96,7 +103,7 @@ function ans(id) {
         $('#comment').text("すごい。せいかい。");
         break;
       case 5:
-        $('#comment').text("(*^^*)");
+        $('#comment').text("また せいかい(*^^*)");
         break;
       case 7:
         $('#comment').text("すご。");
@@ -112,6 +119,33 @@ function ans(id) {
         break;
       case 20:
         $('#comment').text("てんさいだー！");
+        break;
+      case 21:
+        $('#comment').text("そろそろ きゅうけい してはいかがですか。");
+        break;
+      case 22:
+        $('#comment').text("いぬ は うれしい とき、しっぽ を どうするでしょうか？");
+        break;
+      case 23:
+        $('#comment').text("せいかいは、ふります！");
+        break;
+      case 25:
+        $('#comment').text("ねこ は うれしい とき、しっぽ を どうするでしょうか？");
+        break;
+      case 26:
+        $('#comment').text("せいかいは、ピン と たてます。");
+        break;
+      case 30:
+        $('#comment').text("もんだい、かんたん すぎますか？");
+        break;
+      case 31:
+        $('#comment').text("つぎから、もんだいを少し むつかしく します。");
+        break;
+      case 35:
+        $('#comment').text("もう、さんすう は かんぺき かな。");
+        break;
+      case 100:
+        $('#comment').text("100 もん せいかい。やるな〜。");
         break;
       default:
         $('#comment').text("");

@@ -17,6 +17,14 @@ h1 {
   margin-top: 15px;
 }
 
+h2 {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 1px;
+}
+
 .readme {
   color: #283C46;
   text-decoration: none;
@@ -29,5 +37,9 @@ hr {
 }
 
 .btn {
-  margin: 3px;
+  margin: 3px 10px;
+}
+
+.point {
+  font-size: 18px;
 }
